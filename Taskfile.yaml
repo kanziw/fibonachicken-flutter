@@ -1,0 +1,35 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  APP: fibonachicken
+
+tasks:
+  default:
+    cmds:
+      - task: install:prereqs
+      - task: install:deps
+
+  install:prereqs:
+    desc: Installs prerequisites
+    cmds:
+      - brew bundle
+    sources:
+      - Brewfile
+    preconditions:
+      - sh: command -v brew
+        msg: "Please install Homebrew: https://brew.sh/"
+
+  install:deps:
+    desc: Installs dependencies
+    run: once
+    cmds:
+      - cmd: asdf plugin add dart
+        ignore_error: true
+      - cmd: asdf plugin add flutter
+        ignore_error: true
+      - asdf install
+      - asdf current
+    sources:
+      - .tool-versions
