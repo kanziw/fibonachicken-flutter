@@ -1,11 +1,11 @@
 {
-    "name": "fibonachicken",
-    "short_name": "fibonachicken",
+    "name": "피보나치킨",
+    "short_name": "피보나치킨",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "남기지 않는다. 치킨. 피보나치킨!",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
