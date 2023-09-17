@@ -32,16 +32,20 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text(
           '피보나치킨 계산기',
           style: TextStyle(
-            fontSize: 24,
+            fontSize: 36,
           ),
         ),
+        toolbarHeight: 80,
         actions: [
           IconButton(
             onPressed: () async {
               await launchUrlString(
                   'https://github.com/kanziw/fibonachicken-flutter');
             },
-            icon: const Icon(MaterialCommunityIcons.github),
+            icon: const Icon(
+              MaterialCommunityIcons.github,
+              size: 30,
+            ),
           )
         ],
       ),
@@ -65,18 +69,36 @@ class _HomeScreenState extends State<HomeScreen> {
                   onChanged: onTextFieldChanged,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: '몇 명이 잡수시나요?',
+                    label: Text(
+                      '몇 명이 잡수시나요?',
+                      style: TextStyle(fontSize: 20),
+                    ),
                     suffix: Text('명 이면..'),
                   ),
                 ),
-                const SizedBox(height: 20),
-                Text('$chickenCount닭!🐔'),
-                const SizedBox(height: 20),
-                Text(
-                  peopleCount < 10000
-                      ? '🐔' * chickenCount
-                      : '이정도면 🐔이 모자라지 않을까요...?',
-                ),
+                if (peopleCount > 0)
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Text(
+                          '$chickenCount닭!🐔',
+                          style: const TextStyle(
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        peopleCount < 10000
+                            ? '🐔' * chickenCount
+                            : '이정도면 🐔이 모자라지 않을까요...?',
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
                 ExpandablePanel(
                   header: const Text('세상 만사..'),
                   collapsed: const Text(''),

@@ -37,7 +37,7 @@ tasks:
   build:web:
     desc: Build Web Application with release mode
     cmds:
-      - flutter build web --release
+      - flutter build web --release --no-tree-shake-icons
     sources:
       - web/**/*
       - lib/**/*
