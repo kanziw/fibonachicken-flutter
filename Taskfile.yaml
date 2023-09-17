@@ -64,3 +64,9 @@ tasks:
     sources:
       - pubspec.yaml
       - assets/icon/**/*
+
+  build:android:
+    desc: Build Android Application with release mode
+    cmds:
+      - flutter build appbundle
+      - ls -lh build/app/outputs/bundle/release/app-release.aab
