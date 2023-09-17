@@ -54,3 +54,13 @@ tasks:
           --names "BUILD,SERVER"
           "npx nodemon --watch lib --ext dart --exec \"task build:web\""
           "task run:web"
+
+  update-launcher-icons:
+    desc: Update Launcher Icons
+    cmds:
+      # https://pub.dev/packages/flutter_launcher_icons
+      - flutter pub get
+      - flutter pub run flutter_launcher_icons
+    sources:
+      - pubspec.yaml
+      - assets/icon/**/*
