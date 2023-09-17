@@ -33,3 +33,24 @@ tasks:
       - asdf current
     sources:
       - .tool-versions
+
+  build:web:
+    desc: Build Web Application with release mode
+    cmds:
+      - flutter build web --release
+    sources:
+      - web/**/*
+      - lib/**/*
+
+  run:web:
+    desc: Run Web Application
+    cmds:
+      - npx http-server build/web
+
+  watch:web:
+    desc: Watch, Build and Run Web Application (It's slow)
+    cmds:
+      - npx concurrently
+          --names "BUILD,SERVER"
+          "npx nodemon --watch lib --ext dart --exec \"task build:web\""
+          "task run:web"
