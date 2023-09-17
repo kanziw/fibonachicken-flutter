@@ -75,6 +75,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     suffix: Text('명 이면..'),
                   ),
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
                 if (peopleCount > 0)
                   Column(
@@ -109,6 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           '모든 것의 균형은 황금 비율에서 그 해답을 찾을 수 있고, 이를 수학적으로 풀어낸것이 바로 피보나치 수열이니라.'),
                       RichText(
                         text: const TextSpan(
+                          style: TextStyle(color: Colors.black),
                           children: [
                             TextSpan(
                               text:
@@ -125,10 +129,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8),
                         child: RichText(
                           text: TextSpan(
                             style: const TextStyle(
+                              color: Colors.black,
                               fontStyle: FontStyle.italic,
                             ),
                             children: [
