@@ -5,6 +5,12 @@ version: "3"
 vars:
   APP: fibonachicken
 
+env:
+  LC_ALL: en_US.UTF-8
+  LANG: en_US.UTF-8
+  FLUTTER_ROOT:
+    sh: asdf where flutter
+
 tasks:
   default:
     cmds:
@@ -70,3 +76,12 @@ tasks:
     cmds:
       - flutter build appbundle
       - ls -lh build/app/outputs/bundle/release/app-release.aab
+
+  publish:android:
+    desc: Publish Android Application to Google Play Store
+    dir: android/
+    cmds:
+      - fastlane deploy
+    sources:
+      - android/**/*
+      - build/app/outputs/bundle/release/app-release.aab

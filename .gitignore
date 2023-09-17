@@ -1,4 +1,9 @@
 .task/
+android/key.properties
+android/upload-keystore.jks
+android/pc-api-8116504924791173411-627-1c78528bacc7.json
+
+**/fastlane/report.xml
 
 # Miscellaneous
 *.class
