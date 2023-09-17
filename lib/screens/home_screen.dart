@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text(
           '피보나치킨 계산기',
           style: TextStyle(
-            fontSize: 36,
+            fontSize: 32,
           ),
         ),
         toolbarHeight: 80,
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Text(
-                        peopleCount < 10000
+                        peopleCount < 1000
                             ? '🐔' * chickenCount
                             : '이정도면 🐔이 모자라지 않을까요...?',
                         style: const TextStyle(
