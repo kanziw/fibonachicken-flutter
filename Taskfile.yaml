@@ -10,6 +10,8 @@ env:
   LANG: en_US.UTF-8
   FLUTTER_ROOT:
     sh: asdf where flutter
+  BUILD_NUMBER:
+    sh: date +%s
 
 tasks:
   default:
@@ -74,14 +76,14 @@ tasks:
   build:android:
     desc: Build Android Application with release mode
     cmds:
-      - flutter build appbundle
+      - flutter build appbundle --build-number=$BUILD_NUMBER
       - ls -lh build/app/outputs/bundle/release/app-release.aab
+    generates:
+      - build/app/outputs/bundle/release/app-release.aab
 
   publish:android:
     desc: Publish Android Application to Google Play Store
     dir: android/
     cmds:
+      - task: build:android
       - fastlane deploy
-    sources:
-      - android/**/*
-      - build/app/outputs/bundle/release/app-release.aab
