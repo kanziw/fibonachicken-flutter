@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Text(
                         peopleCount < 1000
-                            ? 'c' * chickenCount
+                            ? '🐔' * chickenCount
                             : '이정도면 🐔이 모자라지 않을까요...?',
                         style: const TextStyle(
                           fontSize: 16,
