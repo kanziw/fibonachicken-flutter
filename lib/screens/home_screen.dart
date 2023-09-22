@@ -3,7 +3,7 @@ import 'package:fibonachicken/fibonachicken.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_font_icons/flutter_font_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -42,9 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
               await launchUrlString(
                   'https://github.com/kanziw/fibonachicken-flutter');
             },
-            icon: const Icon(
-              MaterialCommunityIcons.github,
-              size: 30,
+            icon: Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: SvgPicture.asset(
+                'assets/github.svg',
+                semanticsLabel: 'GitHub Image',
+              ),
             ),
           )
         ],
